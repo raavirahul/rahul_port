@@ -171,10 +171,10 @@ export default function App() {
             </a>
           </nav>
 
-          <div className="h-12 w-12 overflow-hidden rounded-full ring-2 ring-white/40">
+          <div className="h-16 w-16 overflow-hidden rounded-full ring-2 ring-white/40">
             <img
-              src="/src/assets/placeholder-headshot.jpg"
-              alt="Your headshot"
+              src="/headshot.jpg"
+              alt="Rahul Raavi"
               className="h-full w-full object-cover"
             />
           </div>
