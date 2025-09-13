@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reveal-on-scroll helpers */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(12px); 
+  transition: opacity .6s ease, transform .6s ease; 
+}
+.reveal.reveal-in { 
+  opacity: 1; 
+  transform: none; 
+}
