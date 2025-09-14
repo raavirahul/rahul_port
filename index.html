@@ -11,9 +11,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4QX5721LLV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag("js", new Date());
-      gtag("config", "G-4QX5721LLV");
+
+      // Disable automatic page_view so we can send one on each SPA route change
+      gtag("config", "G-4QX5721LLV", { send_page_view: false });
     </script>
   </head>
   <body>
