@@ -15,6 +15,7 @@ type Experience = {
   role: string;
   company: string;
   time: string;
+  location: string;
   points: string[];
 };
 
@@ -47,50 +48,67 @@ export default function App() {
 
   const projects: Project[] = [
     {
-      title: "Serverless Data Lake on AWS",
+      title: "Customer 360° Analytics",
       blurb: "S3 + Glue + Athena + Lake Formation.",
-      details: "Glue Jobs, dbt, Athena, Lake Formation.",
-      links: [{ label: "GitHub", href: "#" }],
+      details: "Built an Customers analytics platform on AWS.",
+      links: [{ label: "GitHub", href: "https://github.com/raavirahul/AWS-Customer-360-Analytics" }],
       tags: ["AWS", "Data Eng", "ETL"]
     },
     {
-      title: "Real-time Events on Kinesis to Redshift",
-      blurb: "Kinesis, Lambda, Redshift.",
-      details: "Provisioned with CDK, Lambda, Redshift.",
+      title: "Supply chain Visibility",
+      blurb: "SAP, AWS GLUE,S3.",
+      details: "Developed supply chain analytics platform to enhance inventory visibility, optimize logistics and improve demand forecasting.",
       links: [{ label: "GitHub", href: "#" }],
+      tags: ["AWS", "Streaming", "Cloud"]
+    },
+    {
+      title: "Real-time ABInBEV Dashboards",
+      blurb: "PowerbI, Python, S3.",
+      details: "Developed dashboards for event of Customer Complaint resolvement.",
+      links: [{ label: "GitHub", href: "https://github.com/raavirahul/AbIbBEVdata" }],
       tags: ["AWS", "Streaming", "Cloud"]
     }
   ];
 
   const experiences: Experience[] = [
-    {
-      role: "Market Intelligence Analyst",
-      company: "Technip Energies",
-      time: "Aug 2024 - Mar 2025",
-      points: [
-        "Built ingestion and transformations with AWS services.",
-        "Delivered dashboards and improved freshness SLAs."
-      ]
-    },
-    {
-      role: "Data Engineer Intern",
-      company: "Enfocus",
-      time: "Jan 2024 - May 2024",
-      points: [
-        "Created market-intelligence tool AUTOMACI.",
-        "Automated data pipelines and Power BI dashboards."
-      ]
-    },
-    {
-      role: "System Data Engineer",
-      company: "Quanted Technologies",
-      time: "Aug 2021- July 2023",
-      points: [
-        "Improved pallet tracking by 35%.",
-        "Optimized budgeting with forecasting."
-      ]
-    }
-  ];
+  {
+    role: "Market Intelligence Analyst",
+    company: "Technip Energies",
+    time: "Aug 2024 - Mar 2025",
+    location: "Paris, France",
+    points: [
+      "Collaborated with the Strategic Marketing team and Market Intelligence Manager on global market studies.",
+      "Designed and delivered dashboards for Hydrogen, Ethylene, and CCUS using Snowflake and Salesforce data.",
+      "Integrated insights from the company’s internal portal and Azure cloud network to enhance accessibility.",
+      "Enabled strategy teams with reliable, data-driven intelligence to support long-term business planning."
+    ]
+  },
+  {
+    role: "Data Engineer Intern",
+    company: "Enfocus (IESEG Integration Program)",
+    time: "Jan 2024 - May 2024",
+    location: "Ghent, Belgium",
+    points: [
+      "Processed and analyzed 15M+ records from the global software printing industry dataset.",
+      "Built and trained machine learning models with feature engineering and the chunking method for data segmentation.",
+      "Achieved 85% classification accuracy in predicting which accounts belong to which industry segment.",
+      "Translated business requirements into actionable ML pipelines, delivering insights to guide strategic decisions."
+    ]
+  },
+  {
+    role: "System Data Engineer",
+    company: "Quanted Technologies",
+    time: "Aug 2021 - July 2023",
+    location: "Bengaluru, India",
+    points: [
+      "Assisted senior data engineers in preparing, cleaning, and transforming data for analytical use.",
+      "Contributed to feature engineering tasks and the development of dashboards to improve business visibility.",
+      "Supported the design and maintenance of ETL pipelines, gaining hands-on exposure to workflow orchestration with Airflow.",
+      "Upskilled in Snowflake for scalable data processing and collaborated on early-stage pipeline optimization projects."
+    ]
+  }
+];
+
 
   const education: Education[] = [
     { degree: "MSc Big Data Analytics for Business", school: "IESEG School of Management", time: "2023-2025" },
@@ -137,15 +155,15 @@ export default function App() {
       {/* ===== NAVBAR: solid brand blue ===== */}
       <header className="sticky top-0 z-50 bg-brandBlue text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <span className="text-lg font-bold tracking-tight">Rahul Raavi</span>
+          <span className="text-lg font-bold tracking-tight">Rahul RAAVI</span>
 
           <nav className="hidden items-center gap-2 text-sm font-medium sm:flex">
             {[
-              { id: "projects", label: "Projects" },
-              { id: "experience", label: "Experience" },
-              { id: "education", label: "Education" },
-              { id: "openroles", label: "Open Roles" },
-              { id: "resume", label: "Resume" }
+              { id: "projects", label: "PROJECTS" },
+              { id: "experience", label: "EXPERIENCE" },
+              { id: "education", label: "EDUCATION" },
+              { id: "openroles", label: "OPEN ROLES" },
+              { id: "resume", label: "RESUME" }
             ].map((i) => (
               <a
                 key={i.id}
@@ -175,7 +193,7 @@ export default function App() {
           <div className="h-16 w-16 overflow-hidden rounded-full ring-2 ring-white/40">
             <img
               src="/headshot.jpg"
-              alt="Rahul Raavi"
+              alt="Rahul RAAVI"
               className="h-full w-full object-cover"
             />
           </div>
@@ -186,13 +204,12 @@ export default function App() {
       <section id="home" className="bg-white">
         <div className="reveal mx-auto max-w-6xl px-4 pt-10 sm:pt-14">
           <div className="grid gap-4">
-            <h1 className="text-3xl font-extrabold text-brandBlue sm:text-5xl">Rahul Raavi</h1>
+            <h1 className="text-3xl font-extrabold text-brandBlue sm:text-5xl">Rahul RAAVI</h1>
             <p className="text-sm sm:text-base text-slate-600">
-              Data & Cloud Engineer · AWS · Terraform · Python · dbt
+              Data & Cloud Engineer · AWS · Terraform · Python · dbt · Snowflake · Airflow
             </p>
             <p className="mt-2 max-w-prose text-base text-slate-700 sm:text-lg">
-              I design and build reliable, cost-efficient data platforms in the cloud. My stack centers on AWS (Glue,
-              Redshift, EMR, Lambda, S3, Kinesis), dbt, Terraform, and Python.
+              Looking for Opportunities in Data Engineering, Cloud Data Platforms, and Big Data Solutions. Skilled in AWS services, Infrastructure-as-Code, and end-to-end ETL/ELT pipeline design.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <a
